@@ -81,5 +81,7 @@ bottoneGenera.addEventListener('click',
       document.getElementById("codice-cp").innerHtml ="";
       document.getElementById("costo").innerHtml ="";
 
+      //Nascondere il biglietto
+      container.className = 'hidden';
     }
   )
