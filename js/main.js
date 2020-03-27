@@ -2,12 +2,12 @@
  * VENDITA BIGLIETTO TRENO
  ***************************/
 
-/** 
+/**
  * REFERENZE ELEMENTI
  */
 var container = document.getElementById('biglietto');
 var bottoneGenera = document.getElementById('bottoneGenera');
-
+var bottoneAnnulla = document.getElementById("bottoneAnnulla");
 
 
 /**
@@ -15,17 +15,17 @@ var bottoneGenera = document.getElementById('bottoneGenera');
  */
 
 // Generare il biglieto
-bottoneGenera.addEventListener('click', 
+bottoneGenera.addEventListener('click',
     function() {
         // Ottieni valori input utente
         var nome = document.getElementById('nome').value;
-        //console.log(nome); 
+        //console.log(nome);
 
         var kmDaPercorrere = document.getElementById('km').value;
-        //console.log(kmDaPercorrere); 
+        //console.log(kmDaPercorrere);
 
         var fasciaEta = document.getElementById('fascia-eta').value;
-        //console.log(fasciaEta); 
+        //console.log(fasciaEta);
 
         // Calcolo biglietto
         var prezzoKm = 0.21;
@@ -61,10 +61,25 @@ bottoneGenera.addEventListener('click',
 
         // Mostra biglietto
         container.className = 'show';
-    }   
+    }
 );
 
 // Reset biglietto
 
+  bottoneAnnulla.addEventListener ("click",
+    function(){
 
+      //Annullare i valori precedentemente immessi per l'input
+      document.getElementById("nome").value = "";
+      document.getElementById("km").value ="";
+      document.getElementById("fascia-eta").value = "minorenne";
 
+      //Annullare i valori generati per l'output;
+      document.getElementById("nome-passeggero").innerHtml ="";
+      document.getElementById("offerta-applicata").innerHtml ="";
+      document.getElementById("carrozza").innerHtml ="";
+      document.getElementById("codice-cp").innerHtml ="";
+      document.getElementById("costo").innerHtml ="";
+
+    }
+  )
